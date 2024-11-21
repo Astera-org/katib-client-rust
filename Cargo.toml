@@ -1,0 +1,14 @@
+[package]
+name = "katib"
+version = "0.17.0"
+authors = ["OpenAPI Generator team and contributors"]
+edition = "2018"
+
+[dependencies]
+kubernetes = { git = "https://github.com/Astera-org/kubernetes-client-rust.git", tag = "v1.31.0", version = "1.31.0" }
+serde = "^1.0"
+serde_derive = "^1.0"
+serde_json = "^1.0"
+url = "^2.2"
+
+[dev-dependencies]

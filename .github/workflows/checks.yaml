@@ -1,0 +1,21 @@
+---
+name: checks
+on: # yamllint disable-line rule:truthy
+  pull_request:
+  push:
+    branches:
+      - master
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      CARGO_TERM_COLOR: always
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Rust toolchains
+        run: rustup --quiet toolchain install --profile minimal stable nightly
+      - uses: Swatinem/rust-cache@v2
+      - name: Build
+        run: cargo build --all-targets --all-features
+
