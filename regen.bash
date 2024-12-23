@@ -25,7 +25,7 @@ cargo remove reqwest
 sed -i '' '/^[[:space:]]*\/\/\/[[:space:]]*$/d' src/models/*.rs
 
 # Add missing types
-cargo add kubernetes --git https://github.com/Astera-org/kubernetes-client-rust.git --tag v1.31.0
+cargo add kubernetes --git https://github.com/Astera-org/kubernetes-client-rust.git --tag "v1.31.0+1"
 echo "pub(crate) use kubernetes::models::{V1Container, V1HttpGetAction, V1ListMeta, V1ObjectMeta};
 pub(crate) use serde_json::Value as V1UnstructuredUnstructured;
 pub(crate) use String as V1Time;" >> src/models/mod.rs
